@@ -6,7 +6,7 @@ See a live version here: iclone-experis.herokuapp.com
 This application is using Spring + Thymeleaf to display data on HTML templates from Chinook Sqlite database. The application also exposes an RESTFUL API to perfrom CURD operations.
 The Thymeleaf root page displays 5 random genres, artists and songs selected from the database. Search functionality for songs is also implemented.
 
-### Usage
+### API Usage
 
 API supports following functionality:
 
