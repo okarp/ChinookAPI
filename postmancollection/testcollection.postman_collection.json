@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "0030cf18-8dd4-47fd-9e88-41280dc659d6",
+		"name": "testcollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "testCustomersGet",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rest/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rest",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testSingleCustomerGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rest/customers/59",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rest",
+						"customers",
+						"59"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testSingleCustomerGet404Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rest/customers/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rest",
+						"customers",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testCustomersInvoiceTotalGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rest/customers/invoice/total",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rest",
+						"customers",
+						"invoice",
+						"total"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testCustomerPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Test\",\r\n    \"lastName\" : \"Subject\",\r\n    \"postalCode\": \"00000\", \r\n    \"country\" : \"Moon\",\r\n    \"email\" :\"test@subject.com\",\r\n    \"phoneNumber\" : \"789456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rest/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rest",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testCustomerPost400Status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postalCode\": \"00000\", \r\n    \"country\" : \"Moon\",\r\n    \"email\" :\"test@subject.com\",\r\n    \"phoneNumber\" : \"789456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rest/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rest",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testCustomerPut",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"firstName\" : \"Override\",\r\n    \"lastName\" : \"Customer59\",\r\n    \"customerId\" : \"59\",\r\n    \"postalCode\": \"123456\", \r\n    \"country\" : \"Mars\",\r\n    \"email\" :\"newemail@email.com\",\r\n    \"phoneNumber\" : \"147258369\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rest/customers/59",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rest",
+						"customers",
+						"59"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testCustomerPut400Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"firstName\" : \"Test3\",\r\n    \"lastName\" : \"Subject\",\r\n    \"customerId\" : \"61\",\r\n    \"postalCode\": \"00000\", \r\n    \"country\" : \"Moon\",\r\n    \"email\" :\"test@subject.com\",\r\n    \"phoneNumber\" : \"789456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rest/customers/60",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rest",
+						"customers",
+						"60"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testCustomerPopularGenre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rest/customers/12/popular/genre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rest",
+						"customers",
+						"12",
+						"popular",
+						"genre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testCountryCustomerTotal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rest/country/total/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rest",
+						"country",
+						"total",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

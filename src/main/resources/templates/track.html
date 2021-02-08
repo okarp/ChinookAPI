@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+<head>
+    <meta charset="UTF-8">
+    <title>Track Search</title>
+</head>
+<body>
+
+<div class="container">
+    <h1 style="padding-top: 25px">Track search page</h1>
+
+    <div style="padding-top: 25px"> <h3>Search results for: <span th:text="${searchParam} ?: 'No search made yet'" /></h3></div>
+
+    <div th:if="${track != null}">
+        <table class="table table-bordered">
+            <tr>
+                <th class="table-primary">Track name</th>
+                <th class="table-primary">Track genre</th>
+                <th class="table-primary">Track album</th>
+            </tr>
+            <tr>
+                <td><span th:text="${track.getName()} ?: 'Track not found!'" /></span></td>
+                <td><span th:text="${track.getGenreName()} ?: 'Track not found!'" /></td>
+                <td><span th:text="${track.getAlbumTitle()} ?: 'Track not found!'" /></td>
+            </tr>
+        </table>
+    </div>
+    <a th:href="@{'/'}"><span>Back to Home Page</span></a>
+
+    <form style="padding-top: 20px" method="POST" th:action="@{/TrackSearch}">
+        Search for another track:<input type="text" name="trackName" id="trackName" th:required="required"/>
+        <input type="submit" value="Search!"/>
+    </form>
+</div>
+
+
+</body>
+</html>

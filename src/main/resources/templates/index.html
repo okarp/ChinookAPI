@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+
+<body>
+<div class="container">
+
+<table class="table table-bordered ">
+     <th class="table-primary"> Random songs </th>
+        <tr th:each="track : ${randomTracks}">
+            <td><span th:text="${track.getName()}"></span></td>
+        </tr>
+
+    <th class="table-primary"> Random artists </th>
+        <tr th:each="artist : ${randomArtists}">
+            <td><span th:text="${artist.getName()}"></span></td>
+        </tr>
+
+    <th class="table-primary"> Random genres </th>
+        <tr th:each="genre : ${randomGenres}">
+            <td><span th:text="${genre.getName()}"></span></td>
+        </tr>
+</table>
+
+    <form style="padding-top: 20px" method="POST" th:action="@{/TrackSearch}">
+        Search for a track:<input type="text" name="trackName" id="trackName" th:required="required"/>
+        <input type="submit" value="Search!"/>
+    </form>
+
+</div>
+</body>
+</html>
