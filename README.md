@@ -45,4 +45,4 @@ PUT: api/rest/customers/{id} - updates the customer's info, see below supported 
 }
 ```
 
-Live version (and the API) can be tried in: iclone-experis.herokuapp.com
+Live version can be seen at iclone-experis.herokuapp.com and the API can be called via iclone-experis.herokuapp.com/api/rest/{param}
